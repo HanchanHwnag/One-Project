@@ -1,0 +1,20 @@
+DROP TABLE CLIENT;
+
+CREATE SEQUENCE client_seq 
+INCREMENT BY 1 START WITH 1
+MAXVALUE 10000
+
+CREATE TABLE CLIENT (
+	idx int	not null,
+	name varchar(20),
+	id varchar(20),
+	pwd	varchar(20),
+	birth	varchar(20),
+	phone	varchar(14),
+	remain_time int default 0,
+	address varchar(50),
+	connected int default 0,
+	
+	primary key(idx)
+);
+

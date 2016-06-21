@@ -1,0 +1,26 @@
+DROP TABLE PRODUCT;
+DROP TABLE PRODUCT_CATE;
+
+CREATE TABLE PRODUCT_CATE (
+   CATE_CODE   int   not null,
+   CATE_NAME   varchar(20),
+   primary key(cate_code)
+);
+
+CREATE TABLE PRODUCT (
+   IDX   int   not null,
+   CATE_CODE   int   not null,
+   CATE_NAME   varchar(20)   not null,
+   CATE_PRICE   int   not null, 
+   CATE_STOCK   int   not null, 
+   CATE_IMG   varchar(100),
+   primary key(IDX),
+   foreign key(CATE_CODE)
+   references PRODUCT_CATE(CATE_CODe)
+);
+
+INSERT INTO PRODUCT_CATE VALUES(0, 'Snack');
+INSERT INTO PRODUCT_CATE VALUES(1, 'Drink');
+INSERT INTO PRODUCT_CATE VALUES(2, 'Coffee');
+INSERT INTO PRODUCT_CATE VALUES(3, 'Noodle');
+INSERT INTO PRODUCT_CATE VALUES(4, 'Set');

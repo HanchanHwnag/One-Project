@@ -1,0 +1,38 @@
+DB 정보
+
+CREATE SEQUENCE USER2_SEQ INCREMENT BY 1 STATRT WITH 1 MAVALUE 10000
+
+CREATE TABLE USER2 (
+	idx int	not null,
+	name varchar(20),
+	id varchar(20),
+	pwd	varchar(20),
+	birth	varchar(20), // 0000/00/00
+	phone	varchar(14), // 0000-0000-0000
+	remain_time int default 0, // 분
+	address varchar(50), // 맘대로
+	connected int default 0, // 0 -> 비접속, 1 -> 접속
+	
+	primary key(idx)
+);
+
+
+
+CREATE SEQUENCE PRODUCT_SEQ INCREMENT BY 1 STATRT WITH 1 MAVALUE 10000
+
+CREATE TABLE PRODUCT (
+	IDX	int	not null,
+	CATE_CODE	int	not null, // 0 -> 음료수, 1 -> 스낵류, 2 -> 라면, 3->커피
+	CATE_NAME	varchar	not null,
+	CATE_PRICE	int	not null, 
+	CATE_STOCK	int	not null, 
+	IMAGE varchar2(100),
+	primary key(IDX)
+);
+
+
+
+CREATE TABLE PRODUCT_CATE (
+	CATE_CODE	int	not null, // 0   1   2 
+	CATE_NAME	varchar(20) // 음료수 스넥류 음식류
+);

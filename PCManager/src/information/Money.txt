@@ -1,0 +1,10 @@
+drop table money;
+
+CREATE TABLE MONEY (
+	code int not null,
+	today varchar(20),
+	history varchar(100),
+	money int,
+	id varchar(20)
+);
+
